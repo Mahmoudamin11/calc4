@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+
+    <title>Calculator App</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<!-- Font size (numbers): 32px  -->
+<!-- - Weights: 700 -->
+
+<body class="font-spartan bg-skin-base m-0 p-0 flex flex-col items-center justify-center h-screen ">
+
+    <div
+        class="container w-full sm:w-7/12 sm:pt-14 md:w-6/12 md:pt-14 lg:w-5/12 lg:pt-14 xl:w-4/12 xl:pt-14  flex flex-col items-center justify-center h-screen p-6 ">
+        <div class="name-theme-changer w-full flex justify-between">
+            <h1 class="font-bold text-3xl -mt-2 text-skin-screen">calc</h1>
+            <div class="theme-changer flex">
+                <p class="mr-3 mt-2 text-skin-screen uppercase text-md font-light">theme</p>
+                <div class="themes bg-skin-keypad w-24 h-9 rounded-full flex items-center justify-evenly">
+                    <div
+                        class="th one transition-colors duration-100 active w-5 h-5 rounded-full bg-skin-key-accent-2  cursor-pointer relative before:content-['1'] before:text-lg before:text-skin-screen before:absolute before:right-1/2 before:-top-10 before:translate-x-1/2">
+                    </div>
+                    <div
+                        class="th two w-5 h-5 rounded-full transition-colors duration-100   cursor-pointer relative before:content-['2'] before:text-lg  before:text-skin-screen before:absolute before:right-1/2 before:-top-10 before:translate-x-1/2">
+                    </div>
+                    <div
+                        class="th three w-5 h-5 rounded-full  transition-colors duration-100  cursor-pointer relative before:content-['3'] before:text-lg before:text-skin-screen before:absolute before:right-1/2 before:-top-10 before:translate-x-1/2">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="screen"
+            class="w-full h-20 bg-skin-screen text-skin-screen overflow-hidden my-7 sm:my-3  md:my-3  lg:my-3  xl:my-3  rounded-lg p-6 flex items-center justify-end">
+            <span class="result text-5xl h-3">399,981</span>
+        </div>
+
+        <div class="buttons w-full bg-skin-keypad h-auto p-4 rounded-lg grid grid-cols-4 gap-3 gap-y-4 ">
+            <span id="7" data-cont="7"
+                class="btn w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">7</span>
+            <span id="8" data-cont="8"
+                class="btn w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">8</span>
+            <span id="9" data-cont="9"
+                class="btn w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">9</span>
+            <span id="del"
+                class="remove w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-accent-1 transition-colors hover:bg-skin-key-hover-accent-1 cursor-pointer   shadow-key-accent-1 py-4 px-8 text-skin-key-accent-1 text-3xl">Del</span>
+            <span id="4" data-cont="4"
+                class="btn w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">4</span>
+            <span id="5" data-cont="5"
+                class="btn w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">5</span>
+            <span id="6" data-cont="6"
+                class="btn w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">6</span>
+            <span id="+" data-cont="+"
+                class="op w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">+</span>
+            <span id="1" data-cont="1"
+                class="btn w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">1</span>
+            <span id="2" data-cont="2"
+                class="btn w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">2</span>
+            <span id="3" data-cont="3"
+                class="btn w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">3</span>
+            <span id="-" data-cont="-"
+                class="op w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">-</span>
+            <span id="dot" data-cont="."
+                class="btn w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">.</span>
+            <span id="0" data-cont="0"
+                class="btn w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">0</span>
+            <span id="/" data-cont="/"
+                class="op w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">/</span>
+            <span id="x" data-cont="x"
+                class="op w-20% h-20% sm:h-fit sm:py-2 md:h-fit md:py-2 lg:h-fit lg:py-2 xl:h-fit xl:py-2  rounded-md flex items-center justify-center bg-skin-key-base transition-colors hover:bg-skin-key-hover-base cursor-pointer  shadow-key-base py-4 px-8 text-skin-key-base text-3xl">x</span>
+
+            <span id="reset"
+                class="remove  w-2full h-20% sm:h-fit sm:py-2  md:h-fit md:py-2  lg:h-fit lg:py-2  xl:h-fit xl:py-2    rounded-md flex items-center justify-center bg-skin-key-accent-1 transition-colors hover:bg-skin-key-hover-accent-1 cursor-pointer  shadow-key-accent-1 p-4 text-skin-key-accent-1 text-3xl">Reset</span>
+            <span id="equal"
+                class="w-2full   ml-125%  h-20% sm:h-fit sm:py-2  md:h-fit md:py-2  lg:h-fit lg:py-2  xl:h-fit xl:py-2   p-4 rounded-md cursor-pointer flex items-center justify-center bg-skin-key-accent-2 transition-colors hover:bg-skin-key-hover-accent-2 text-skin-key-accent-2 text-3xl shadow-key-accent-2">=</span>
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="/src/js/main.js"></script>
+</body>
+
+</html>
