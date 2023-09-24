@@ -11,7 +11,6 @@ let screen = document.querySelector("div#screen");
 
 let elementsCnt = 0;
 
-localStorage.clear();
 
 if (window.localStorage.length > 0) {
 
