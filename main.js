@@ -11,15 +11,16 @@ let screen = document.querySelector("div#screen");
 
 let elementsCnt = 0;
 
-
-if (localStorage.show == "") {
-    screen.style.padding = "40px 24px";
-} else {
-
-    screen.style.padding = "24px";
-}
+localStorage.clear();
 
 if (window.localStorage.length > 0) {
+
+    if (localStorage.show == "") {
+        screen.style.padding = "40px 24px";
+    } else {
+
+        screen.style.padding = "24px";
+    }
     if (localStorage.theme == 'one') {
         body.classList.remove("theme-2");
         body.classList.remove("theme-3");
@@ -233,8 +234,10 @@ buttonsContainer.addEventListener('click', () => {
         screen.style.padding = "24px";
     }
 })
+if (localStorage.length > 0) {
 
-show.innerText = localStorage.show;
+    show.innerText = localStorage.show;
+}
 
 
 
