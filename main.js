@@ -11,8 +11,6 @@ let screen = document.querySelector("div#screen");
 
 let elementsCnt = 0;
 
-// window.localStorage.clear();
-// localStorage.setItem("show", show.innerText);
 
 if (localStorage.show == "") {
     screen.style.padding = "40px 24px";
